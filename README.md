@@ -189,3 +189,20 @@ Bu proje özellikle aşağıdaki gruplar için yüksek katma değer sunar:
 
 ---
 
+## 🤖 Otomatik Günlük Forklama Sistemi
+
+Bu depo, GitHub'da her gün trend olan ilk 3 projeyi otomatik olarak hesabınıza forklayacak şekilde yapılandırılmıştır.
+
+### Nasıl Çalışır?
+- GitHub Actions her gün gece yarısı (UTC) otomatik olarak çalışır.
+- `scripts/fork_trending.py` betiği güncel trend listesini çeker.
+- En üstteki 3 proje hesabınıza forklanır.
+
+### Kurulum ve Yapılandırma
+Sistemin çalışması için bir **Personal Access Token (PAT)** gereklidir:
+1. [GitHub Settings > Developer Settings > Personal Access Tokens](https://github.com/settings/tokens) bölümünden yeni bir token oluşturun (en az `public_repo` yetkisi gereklidir).
+2. Bu depoda **Settings > Secrets and variables > Actions** kısmına gidin.
+3. `New repository secret` butonuna tıklayın.
+4. İsim olarak `GH_PAT` girin ve değer olarak oluşturduğunuz token'ı yapıştırın.
+
+Bu adımlardan sonra sistem her gün otomatik olarak çalışacaktır.
